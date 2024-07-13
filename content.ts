@@ -1,7 +1,5 @@
 import type { PlasmoCSConfig } from "plasmo"
 
-import { sendToBackground } from "@plasmohq/messaging"
-
 export const config: PlasmoCSConfig = {
   run_at: "document_end",
   matches: ["<all_urls>"],
@@ -42,13 +40,7 @@ const handleElement = async (tag: string, element: Element) => {
 
     console.log("[Shortcut] Calling")
 
-    const { data } = await sendToBackground({
-      name: "process",
-      body: { url },
-      extensionId: "dkfjmmpblkmjonmaemcmngophheaolkh"
-    })
-
-    const newDiv = document.createElement("div")
+    const newDiv = document.createElement("button")
     newDiv.id = newId
     newDiv.style.display = "flex"
     newDiv.style.flexDirection = "column"
@@ -59,63 +51,93 @@ const handleElement = async (tag: string, element: Element) => {
     newDiv.style.borderRadius = "4px"
     newDiv.style.padding = ".5em"
     newDiv.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
-
-    const img = document.createElement("img")
-    img.src = data.image
-    img.width = 400
-    img.height = 400
-    img.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
-
-    const a = document.createElement("a")
-    a.style.fontSize = "12px"
-    a.href = url
-    a.innerText = url
-
-    const title = document.createElement("h3")
-    title.innerText = data.title
-    title.style.padding = "0 !important"
-
-    const description = document.createElement("p")
-    description.innerText = data.description
-
-    const actionsGrid = document.createElement("div")
-    actionsGrid.style.display = "grid"
-    actionsGrid.style.gridTemplateColumns = "1fr 1fr"
-    // add gap
-    actionsGrid.style.gap = "8px"
-
-    for (const link of data.links) {
-      const linkButton = document.createElement("div")
-      linkButton.innerText = link.label
-      linkButton.style.cursor = "pointer"
-      linkButton.style.padding = ".5em"
-      linkButton.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
-      linkButton.style.borderRadius = "4px"
-      linkButton.style.textAlign = "center"
-      linkButton.style.backgroundColor = "#7289da"
-      linkButton.style.color = "white"
-      linkButton.style.fontWeight = "600"
-
-      if (link.type === "link") {
-        linkButton.onclick = () => {
-          window.open(link.targetUrl, "_blank")
-        }
-      } else if (link.type === "tx") {
-        linkButton.onclick = async () => {}
-      }
-
-      actionsGrid.appendChild(linkButton)
+    newDiv.innerText = "Open EVM Action"
+    newDiv.style.color = "white"
+    newDiv.onclick = () => {
+      window.open(
+        `chrome-extension://dkfjmmpblkmjonmaemcmngophheaolkh/tabs/eal.html?action=${encodeURIComponent(eal)}`,
+        "_blank",
+        "noopener,noreferrer,popup=true,width=500,height=600"
+      )
     }
 
-    newDiv.appendChild(img)
-    newDiv.appendChild(a)
-    newDiv.appendChild(title)
-    newDiv.appendChild(description)
-    newDiv.appendChild(actionsGrid)
-
     element.parentNode?.appendChild(newDiv)
-
     element.remove()
+
+    // const { data } = await sendToBackground({
+    //   name: "process",
+    //   body: { url },
+    //   extensionId: "dkfjmmpblkmjonmaemcmngophheaolkh"
+    // })
+
+    // const newDiv = document.createElement("div")
+    // newDiv.id = newId
+    // newDiv.style.display = "flex"
+    // newDiv.style.flexDirection = "column"
+    // newDiv.style.alignItems = "center"
+    // newDiv.style.width = "420px"
+    // newDiv.style.backgroundColor = "hsl(220 calc( 1 * 6.5%) 18% / 1)"
+    // newDiv.style.marginTop = "8px"
+    // newDiv.style.borderRadius = "4px"
+    // newDiv.style.padding = ".5em"
+    // newDiv.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
+
+    // const img = document.createElement("img")
+    // img.src = data.image
+    // img.width = 400
+    // img.height = 400
+    // img.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
+
+    // const a = document.createElement("a")
+    // a.style.fontSize = "12px"
+    // a.href = url
+    // a.innerText = url
+
+    // const title = document.createElement("h3")
+    // title.innerText = data.title
+    // title.style.padding = "0 !important"
+
+    // const description = document.createElement("p")
+    // description.innerText = data.description
+
+    // const actionsGrid = document.createElement("div")
+    // actionsGrid.style.display = "grid"
+    // actionsGrid.style.gridTemplateColumns = "1fr 1fr"
+    // // add gap
+    // actionsGrid.style.gap = "8px"
+
+    // for (const link of data.links) {
+    //   const linkButton = document.createElement("div")
+    //   linkButton.innerText = link.label
+    //   linkButton.style.cursor = "pointer"
+    //   linkButton.style.padding = ".5em"
+    //   linkButton.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
+    //   linkButton.style.borderRadius = "4px"
+    //   linkButton.style.textAlign = "center"
+    //   linkButton.style.backgroundColor = "#7289da"
+    //   linkButton.style.color = "white"
+    //   linkButton.style.fontWeight = "600"
+
+    //   if (link.type === "link") {
+    //     linkButton.onclick = () => {
+    //       window.open(link.targetUrl, "_blank")
+    //     }
+    //   } else if (link.type === "tx") {
+    //     linkButton.onclick = async () => {}
+    //   }
+
+    //   actionsGrid.appendChild(linkButton)
+    // }
+
+    // newDiv.appendChild(img)
+    // newDiv.appendChild(a)
+    // newDiv.appendChild(title)
+    // newDiv.appendChild(description)
+    // newDiv.appendChild(actionsGrid)
+
+    // element.parentNode?.appendChild(newDiv)
+
+    // element.remove()
   } catch (error) {
     console.error(error, "[Shortcut] Error")
   }
