@@ -6,6 +6,10 @@ export const config: PlasmoCSConfig = {
   world: "MAIN"
 }
 
+if (window.parent) {
+  window.ethereum = window.parent.ethereum
+}
+
 async function sha256(message: string) {
   // encode as UTF-8
   const msgBuffer = new TextEncoder().encode(message)
@@ -31,6 +35,7 @@ const handleElement = async (tag: string, element: Element) => {
   try {
     const eal = tag === "code" ? element.innerHTML : element.textContent
     const url = `https://${eal?.split("eal://")[1]}`
+
     // console.log(url)
 
     const hash = await sha256(url)
@@ -40,29 +45,45 @@ const handleElement = async (tag: string, element: Element) => {
 
     console.log("[Shortcut] Calling")
 
-    const newDiv = document.createElement("button")
-    newDiv.id = newId
-    newDiv.style.display = "flex"
-    newDiv.style.flexDirection = "column"
-    newDiv.style.alignItems = "center"
-    newDiv.style.width = "420px"
-    newDiv.style.backgroundColor = "hsl(220 calc( 1 * 6.5%) 18% / 1)"
-    newDiv.style.marginTop = "8px"
-    newDiv.style.borderRadius = "4px"
-    newDiv.style.padding = ".5em"
-    newDiv.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
-    newDiv.innerText = "Open EVM Action"
-    newDiv.style.color = "white"
-    newDiv.onclick = () => {
-      window.open(
-        `chrome-extension://dkfjmmpblkmjonmaemcmngophheaolkh/tabs/eal.html?action=${encodeURIComponent(eal)}`,
-        "_blank",
-        "noopener,noreferrer,popup=true,width=500,height=600"
-        //",popup=true,width=500,height=600"
-      )
-    }
+    // const newDiv = document.createElement("button")
+    // newDiv.id = newId
+    // newDiv.style.display = "flex"
+    // newDiv.style.flexDirection = "column"
+    // newDiv.style.alignItems = "center"
+    // newDiv.style.width = "420px"
+    // newDiv.style.backgroundColor = "hsl(220 calc( 1 * 6.5%) 18% / 1)"
+    // newDiv.style.marginTop = "8px"
+    // newDiv.style.borderRadius = "4px"
+    // newDiv.style.padding = ".5em"
+    // newDiv.style.border = "1px solid hsl(225 calc( 1 * 6.3%) 12.5% / 1)"
+    // newDiv.style.cursor = "pointer"
+    // newDiv.style.marginRight = "auto"
+    // newDiv.style.marginLeft = "auto"
+    // newDiv.innerText = "Launch EVM Action"
+    // newDiv.style.color = "white"
+    // newDiv.onclick = () => {
+    //   window.open(
+    //     `chrome-extension://dkfjmmpblkmjonmaemcmngophheaolkh/tabs/eal.html?action=${encodeURIComponent(eal)}`,
+    //     "_blank",
+    //     "noopener,noreferrer,popup=true,width=500,height=600"
+    //     //",popup=true,width=500,height=600"
+    //   )
+    // }
 
-    element.parentNode?.appendChild(newDiv)
+    // element.parentNode?.appendChild(newDiv)
+
+    const newIframe = document.createElement("iframe")
+    console.log(eal, "[Shortcut] EAL")
+    const encodedEAL = encodeURIComponent(eal.replaceAll("&amp;", "&"))
+    console.log(encodedEAL, "[Shortcut] Encoded EAL")
+    newIframe.src = `chrome-extension://dkfjmmpblkmjonmaemcmngophheaolkh/tabs/eal.html?action=${encodedEAL}`
+    newIframe.width = "430"
+    newIframe.height = "430"
+    // newIframe.style.backgroundColor = "white"
+    newIframe.style.marginTop = "8px"
+    newIframe.style.border = "none"
+
+    element.parentNode?.appendChild(newIframe)
     element.remove()
 
     // const { data } = await sendToBackground({

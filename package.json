@@ -11,9 +11,9 @@
     "dev:host": "plasmo dev --hmr-host='127.0.0.1'"
   },
   "dependencies": {
-    "@dynamic-labs/ethereum": "^3.0.0-alpha.13",
-    "@dynamic-labs/sdk-react-core": "^3.0.0-alpha.13",
-    "@dynamic-labs/wagmi-connector": "^3.0.0-alpha.13",
+    "@dynamic-labs/ethereum": "3.0.0-alpha.13",
+    "@dynamic-labs/sdk-react-core": "3.0.0-alpha.13",
+    "@dynamic-labs/wagmi-connector": "3.0.0-alpha.13",
     "@plasmohq/messaging": "^0.6.2",
     "@plasmohq/storage": "^1.11.0",
     "@tanstack/react-query": "^5.51.1",
@@ -64,7 +64,7 @@
       ]
     },
     "content_security_policy": {
-      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; frame-ancestors 'none';",
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none';",
       "sandbox": "sandbox allow-scripts; script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; default-src 'none'; connect-src *;"
     }
   }

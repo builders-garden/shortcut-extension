@@ -4,10 +4,17 @@ import {
   useIsLoggedIn
 } from "@dynamic-labs/sdk-react-core"
 import { useEffect, useState } from "react"
+import { normalize } from "viem/ens"
 
 import "../assets/style.css"
 
-import type { WalletClient } from "viem"
+import {
+  createPublicClient,
+  http,
+  type PublicClient,
+  type WalletClient
+} from "viem"
+import { mainnet } from "viem/chains"
 
 export default function EALComponent({ action }: { action: string }) {
   const isLoggedIn = useIsLoggedIn()
@@ -19,15 +26,7 @@ export default function EALComponent({ action }: { action: string }) {
 
   useEffect(() => {
     if (action) {
-      // fetch the action
-      const url = decodeURIComponent(action).replace("eal://", "https://")
-      fetch(url)
-        .then(async (data) => {
-          const jsonData = await data.json()
-          console.log(jsonData)
-          setMetadata({ ...jsonData, url })
-        })
-        .catch((error) => console.error(error))
+      onMount()
     }
   }, [action])
 
@@ -35,9 +34,36 @@ export default function EALComponent({ action }: { action: string }) {
     console.log(metadata)
   }, [metadata])
 
+  const onMount = async () => {
+    // fetch the action
+    let url = decodeURIComponent(action).replace("eal://", "https://")
+    const ensName = url.match(/https:\/\/(.*.eth)/)
+    console.log(ensName, "ENS")
+
+    if (ensName && ensName.length > 1) {
+      const ens = ensName[0]
+
+      const publicClient = createPublicClient({
+        chain: mainnet,
+        transport: http()
+      })
+      const ensText = await publicClient.getEnsText({
+        name: normalize(ens.replace("https://", "")),
+        key: "evm-action"
+      })
+      url = ensText.replace("eal://", "https://")
+    }
+
+    const fetchUrlRes = await fetch(url)
+
+    const jsonData = await fetchUrlRes.json()
+    setMetadata({ ...jsonData, url })
+  }
+
   if (!isLoggedIn) {
     return (
-      <div className="w-screen flex items-center justify-center p-8">
+      <div className="w-screen flex flex-col items-center justify-center p-8 bg-white space-y-4">
+        <h1 className="text-xl font-bold">⚡ Shortcut</h1>
         <DynamicWidget />
       </div>
     )
@@ -45,7 +71,8 @@ export default function EALComponent({ action }: { action: string }) {
 
   if (!metadata) {
     return (
-      <div className="w-screen flex items-center justify-center p-8">
+      <div className="w-screen flex flex-col items-center justify-center p-8 bg-white space-y-4">
+        <h1 className="text-xl font-bold">⚡ Shortcut</h1>
         <DynamicWidget />
       </div>
     )
@@ -144,8 +171,6 @@ export default function EALComponent({ action }: { action: string }) {
         })
         const { transactions } = await txDataRes.json()
 
-        await primaryWallet.sync()
-
         for (const transaction of transactions) {
           const { chainId } = transaction
 
@@ -154,6 +179,9 @@ export default function EALComponent({ action }: { action: string }) {
           const walletClient = (await primaryWallet.getWalletClient(
             chainId
           )) as WalletClient
+
+          const publicClient =
+            (await primaryWallet.getPublicClient()) as PublicClient
 
           if (network !== chainId) {
             console.log(network)
@@ -164,9 +192,13 @@ export default function EALComponent({ action }: { action: string }) {
             ...transaction,
             from: primaryWallet.address as `0x${string}`
           })
+
+          await publicClient.waitForTransactionReceipt({ hash: tx })
         }
       }
       if (link.type === "signature") {
+        const network = await primaryWallet.getNetwork()
+
         const signDataRes = await fetch(link.targetUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -176,10 +208,42 @@ export default function EALComponent({ action }: { action: string }) {
         const { message } = await signDataRes.json()
         console.log(message)
         const walletClient = (await primaryWallet.getWalletClient(
-          "84532"
+          message.domain.chainId
         )) as WalletClient
         console.log("[Shortcut] Signing.")
-        const signature = await primaryWallet.signMessage(message)
+
+        if (network !== message.domain.chainId) {
+          console.log(network)
+          await walletClient.switchChain({
+            id: parseInt(message.domain.chainId)
+          })
+        }
+
+        let signature = ""
+        console.log(typeof message)
+        if (typeof message === "string") {
+          signature = await walletClient.signMessage({
+            message,
+            account: primaryWallet.address as `0x${string}`
+          })
+        } else {
+          console.log(
+            {
+              ...message,
+              account: primaryWallet.address as `0x${string}`
+            },
+            "[Shortcut] Typed Data"
+          )
+          console.log(walletClient.account.address, "WALLET CLIENT ADDRESS")
+          signature = await walletClient.signTypedData({
+            domain: message.domain,
+            types: message.types,
+            message: message.message,
+            primaryType: message.primaryType,
+            account: primaryWallet.address as `0x${string}`
+          })
+        }
+
         console.log(signature, "[Shortcut] Signed.")
         await fetch(link.postUrl, {
           method: "POST",
@@ -238,17 +302,17 @@ export default function EALComponent({ action }: { action: string }) {
 
   return (
     <div className="p-4 space-y-4">
-      <div className="border rounded-xl">
+      {/* <div className="border rounded-xl">
         <DynamicWidget />
-      </div>
+      </div> */}
 
-      <div className="flex flex-col items-center p-4 border rounded-xl space-y-2 w-auto max-w-[400px] mx-auto">
+      <div className="flex flex-col items-center p-4 border rounded-xl space-y-2 w-auto max-w-[400px] mx-auto bg-white">
         <img src={metadata.image} width={400} height={400} />
         <a
           href={metadata.url}
           target="_blank"
           className="text-xs text-gray-500 opacity-40 hover:opacity-100">
-          {metadata.url.split("https://")[1]}
+          {metadata.url.split("https://")[1].split("/")[0]}
         </a>
         <div className="text-center">
           <p className="font-bold text-lg">{metadata.title}</p>
