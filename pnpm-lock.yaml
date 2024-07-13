@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@dynamic-labs/ethereum':
-    specifier: 3.0.0-alpha.13
-    version: 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3)
+    specifier: ^3.0.0-alpha.13
+    version: 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3)
   '@dynamic-labs/sdk-react-core':
-    specifier: 3.0.0-alpha.13
-    version: 3.0.0-alpha.13(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
+    specifier: ^3.0.0-alpha.13
+    version: 3.0.0-alpha.19(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
   '@dynamic-labs/wagmi-connector':
-    specifier: 3.0.0-alpha.13
-    version: 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/sdk-react-core@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(@wagmi/core@2.11.7)(eventemitter3@5.0.1)(react@18.2.0)(viem@2.17.3)(wagmi@2.10.10)
+    specifier: ^3.0.0-alpha.13
+    version: 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/sdk-react-core@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(@wagmi/core@2.11.7)(eventemitter3@5.0.1)(react@18.2.0)(viem@2.17.3)(wagmi@2.10.10)
   '@plasmohq/messaging':
     specifier: ^0.6.2
     version: 0.6.2(react@18.2.0)
@@ -1621,19 +1621,19 @@ packages:
       sha.js: 2.4.11
     dev: false
 
-  /@dynamic-labs/embedded-wallet-evm@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3):
-    resolution: {integrity: sha512-P468ZQzjOHJs+EDfW2ccPbdZCDgoC/SptK7CDhBSPh17mrHw0m2f2E+5M0r+GXp5TFIbXRSgflmOeFg4ZV5iuA==}
+  /@dynamic-labs/embedded-wallet-evm@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3):
+    resolution: {integrity: sha512-Y8rUtTCZBnKzCrIeGULFfQnz4b5Afdj4NSFU1QRZAX5ntTfnoGxTyH9sNSEp+XUnny0Hu9KUEibegL1QBFpYXw==}
     peerDependencies:
       viem: ^2.7.6
     dependencies:
-      '@dynamic-labs/embedded-wallet': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/rpc-provider-ethereum': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3)
+      '@dynamic-labs/embedded-wallet': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/rpc-provider-ethereum': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3)
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/viem-utils': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/viem-utils': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       '@turnkey/api-key-stamper': 0.4.0
       '@turnkey/http': 2.7.1
       '@turnkey/iframe-stamper': 2.0.0
@@ -1649,13 +1649,13 @@ packages:
       - react-dom
     dev: false
 
-  /@dynamic-labs/embedded-wallet@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-UfH88wOdV1LwYTuuHwFBKEF/ZaURY+ysbMIfmspgj4aezO0YD6Sb5EZRH8W5nvNpsiylvsYalA6fvf163lqXqA==}
+  /@dynamic-labs/embedded-wallet@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-bh2GDEJz453TXlSBNSCpg5aOyoUch7F0179E34ZIzU/YTFvBCQxr108tLm4CaC9Kh4HW8kje8PwJKoeAwRTAkw==}
     dependencies:
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       '@turnkey/api-key-stamper': 0.4.0
       '@turnkey/http': 2.7.1
       '@turnkey/iframe-stamper': 2.0.0
@@ -1670,20 +1670,20 @@ packages:
       - react-dom
     dev: false
 
-  /@dynamic-labs/ethereum@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3):
-    resolution: {integrity: sha512-Ej0F+0j1gIV+ocMdYxDP4mq4BmmuuH2m7kP95fJeKU0G3k5DwHFd4HbbTrAOZz3KCg+2HtuNa8w9CJ+iH5Q02Q==}
+  /@dynamic-labs/ethereum@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3):
+    resolution: {integrity: sha512-rD60ZZkWJrqEyxtHV1pxqIvFcNcqtyn5gnyTeifi2aUDEpXkdyeN2iItLp+EJgqyKD6j57hxtCNx1yCxBCRiDA==}
     peerDependencies:
       viem: ^2.7.6
     dependencies:
       '@coinbase/wallet-sdk': 4.0.4
-      '@dynamic-labs/embedded-wallet-evm': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3)
-      '@dynamic-labs/rpc-provider-ethereum': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3)
+      '@dynamic-labs/embedded-wallet-evm': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)(viem@2.17.3)
+      '@dynamic-labs/rpc-provider-ethereum': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3)
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/viem-utils': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/viem-utils': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       '@walletconnect/ethereum-provider': 2.11.2(@types/react@18.2.48)(react@18.2.0)
       buffer: 6.0.3
       eventemitter3: 5.0.1
@@ -1714,13 +1714,13 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@dynamic-labs/iconic@3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-UKQL/Nk4zJt6j+D35mKZskSnPvrQ5OYYcsKhEcHrDJzcOJeIr9xe6lRVLWyeLN3MACjftrMO764hLCA6FPZ7Gg==}
+  /@dynamic-labs/iconic@3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fIjlK3NnOzYeskYBgk6Ycw+Iv1QDgfVadvgNuFTLE9/QV40C1eiI3KMIh6qE5SLZrMjNZIKVVqdQRqZWA3cFMA==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       sharp: 0.33.2
@@ -1728,23 +1728,23 @@ packages:
       - eventemitter3
     dev: false
 
-  /@dynamic-labs/logger@3.0.0-alpha.13(eventemitter3@5.0.1):
-    resolution: {integrity: sha512-tqA/DjW9SnxcJkndnPVou5T6BRYY7Vy/obZX8mdHBxmU+a9v+GdMeSdFB8SNF9tbOaW6wuBTpdF0GHDxu50agQ==}
+  /@dynamic-labs/logger@3.0.0-alpha.19(eventemitter3@5.0.1):
+    resolution: {integrity: sha512-0HE04ScHquN48roDHAmSwjgEnZmLxeGVPNunbHS1oGa9DdQ2eCxGrBj0icrosdBMuBpHz+aUizew40tW2YxHew==}
     peerDependencies:
       eventemitter3: 5.0.1
     dependencies:
       eventemitter3: 5.0.1
     dev: false
 
-  /@dynamic-labs/multi-wallet@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ww7/LVTL6T8a8COFnCh5VswOdhAvsQrBc/RXSXiY7az0Q/rg+JqURntJ+59VkXgeVozgQpQfs2z55fb8le8wLw==}
+  /@dynamic-labs/multi-wallet@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Uo7kDtR9AaR+6D9pZ/xvBldlB6OwVq+eO2x3CKNfwwLCCghry1En9DH+Q89Wlfr5gSUKnsJdZ/kZrgzHQq/jmA==}
     dependencies:
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       tslib: 2.4.1
     transitivePeerDependencies:
       - '@dynamic-labs/logger'
@@ -1753,16 +1753,16 @@ packages:
       - react-dom
     dev: false
 
-  /@dynamic-labs/rpc-provider-ethereum@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3):
-    resolution: {integrity: sha512-W1uO4YfKy7RjLF+lvg8W0eXrLmtesgX9bactRLUbgthxlHFUth0f5rwnxT86kzxMIdNVnxWM73nA3CsPhNPDww==}
+  /@dynamic-labs/rpc-provider-ethereum@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3):
+    resolution: {integrity: sha512-lt1UyLxCYl5Oc/KSgNtBY953RDtXNsP1jxQLRM+nyUYUcwiefPJ2vYlvGMdKTf9W+ukp26w6nw1KzgPV4aRTBA==}
     peerDependencies:
       viem: ^1.19.13 || ^2.2.0
     dependencies:
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/viem-utils': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/viem-utils': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3)
       viem: 2.17.3(typescript@5.3.3)
     transitivePeerDependencies:
       - '@dynamic-labs/logger'
@@ -1771,32 +1771,32 @@ packages:
       - eventemitter3
     dev: false
 
-  /@dynamic-labs/rpc-providers@3.0.0-alpha.13:
-    resolution: {integrity: sha512-+3YkGmYzzPrddtQ0B2qq6qlVcAq4lRAhYXPpC80BnOce6+SJ2b7dTXrABh5UA7QBLolzOTGZrbsO67weGdNB9A==}
+  /@dynamic-labs/rpc-providers@3.0.0-alpha.19:
+    resolution: {integrity: sha512-kjVDX1sbIE3syQu6XS20k/z4MruacS2ppgH92pjqwTq32T3sb0KkZy70o1soEf788QO+Ue/3lfiH8RL4SND1/Q==}
     dependencies:
-      '@dynamic-labs/types': 3.0.0-alpha.13
+      '@dynamic-labs/types': 3.0.0-alpha.19
     dev: false
 
   /@dynamic-labs/sdk-api-core@0.0.470:
     resolution: {integrity: sha512-8fahhuvUk7tXWwc0Z+1fChffZaeeX23Y1epUX2KEsm5bj3qBgX71l9llpPExRc3w7Z8Q9AhLA3QhrMmz2baCyw==}
     dev: false
 
-  /@dynamic-labs/sdk-react-core@3.0.0-alpha.13(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0):
-    resolution: {integrity: sha512-/U3mv/KIzsXsrfGY2Yx1UTb0bJ55R1Lk1hsKWH04gHQI1B8TSvuVv6mLJ9lLGkoqQp4KlsEDwBWrsW43LfZRKw==}
+  /@dynamic-labs/sdk-react-core@3.0.0-alpha.19(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0):
+    resolution: {integrity: sha512-mJOAuz2FuWVA4lDBAe7QgLEZMgMCPts+93PqTNPr2p1TI1fHkiPn5AqRM0crnwQbjCXkNQ4jf069FgvnaTT9gw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@dynamic-labs/iconic': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/multi-wallet': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
+      '@dynamic-labs/iconic': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/multi-wallet': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/store': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/store': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       '@hcaptcha/react-hcaptcha': 1.4.4(react-dom@18.2.0)(react@18.2.0)
       country-list: 2.3.0
       eventemitter3: 5.0.1
@@ -1814,26 +1814,26 @@ packages:
       - react-native
     dev: false
 
-  /@dynamic-labs/store@3.0.0-alpha.13(eventemitter3@5.0.1):
-    resolution: {integrity: sha512-wTSGMnWfzO5VxodRq52LCrBgcugeNw5uLIqSpArP9cZxTddYgQamcKmgG+iUVb+7GfdEbUQiGSR+YouKaNIyIg==}
+  /@dynamic-labs/store@3.0.0-alpha.19(eventemitter3@5.0.1):
+    resolution: {integrity: sha512-GjtRzAIC+dZry5GLYGsD3I1WmTYBeSmH/6WAdw4/tctoxhkLU+BUimfHRhX/exRIoGRy3n1Giy4nPjmQjziRmA==}
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
     transitivePeerDependencies:
       - eventemitter3
     dev: false
 
-  /@dynamic-labs/types@3.0.0-alpha.13:
-    resolution: {integrity: sha512-dqQjUrgis/pFec53iBUzvi8NpNDEY6ApvquXYhdFTNj+OzVZ56bJDhkyhtHD4k+Gh1FkxffaF2K/Jhrk9lr0/A==}
+  /@dynamic-labs/types@3.0.0-alpha.19:
+    resolution: {integrity: sha512-5R0wBnIkCyOQ3uasWKxT5a8/sGLqcqo6+1WP8VqfcT5ZTO0Halrbu5d9FK6/F9Y17wUWXG2UlZyHUWnarMCcQg==}
     dependencies:
       '@dynamic-labs/sdk-api-core': 0.0.470
     dev: false
 
-  /@dynamic-labs/utils@3.0.0-alpha.13(eventemitter3@5.0.1):
-    resolution: {integrity: sha512-P6u64CB2AmOu8QxE2zcvMT306ct4K02xze08rwHWuXs7tD91kRHS4eUqrpPREC6953uTGba5uWjxKNb7xozrJg==}
+  /@dynamic-labs/utils@3.0.0-alpha.19(eventemitter3@5.0.1):
+    resolution: {integrity: sha512-0kXUJaxkiYXrxdqGOhYbcL8uC0+6kjzv0wYhcwt8AdryfpGH53O3oVKf84PEwkC6ErBuCjKmiU6z02efEwqhpw==}
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
+      '@dynamic-labs/types': 3.0.0-alpha.19
       buffer: 6.0.3
       stream: 0.0.2
       tldts: 6.0.16
@@ -1841,45 +1841,45 @@ packages:
       - eventemitter3
     dev: false
 
-  /@dynamic-labs/viem-utils@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(eventemitter3@5.0.1)(viem@2.17.3):
-    resolution: {integrity: sha512-HoLsgug0e7HxMI2XJ7FD6nd2h36rGQHzNPMwDiZAQ7jxyZEKM0YhcUSduXaPHojF66AUmag1CBzlJ5GvBRqzJg==}
+  /@dynamic-labs/viem-utils@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(eventemitter3@5.0.1)(viem@2.17.3):
+    resolution: {integrity: sha512-3/+R+wbiByhygjZEsSzlGpdXGTtbVqRcBzv/tScIMZDD9avN+LJDvN49JNpCsken06NkJV7DijLl+sjppeNJfw==}
     peerDependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13
+      '@dynamic-labs/logger': 3.0.0-alpha.19
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19
       eventemitter3: 5.0.1
       viem: ^2.7.6
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       eventemitter3: 5.0.1
       viem: 2.17.3(typescript@5.3.3)
     dev: false
 
-  /@dynamic-labs/wagmi-connector@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/sdk-react-core@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.13)(@wagmi/core@2.11.7)(eventemitter3@5.0.1)(react@18.2.0)(viem@2.17.3)(wagmi@2.10.10):
-    resolution: {integrity: sha512-8MSRDofbzNkxC5ba1HrHh6TvxLu+eXQNF+n3CJHMyleop61S6URqZzsvBqqSyIxyQPD5VSTAuNwRvnjyuM3OvA==}
+  /@dynamic-labs/wagmi-connector@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/sdk-react-core@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/wallet-connector-core@3.0.0-alpha.19)(@wagmi/core@2.11.7)(eventemitter3@5.0.1)(react@18.2.0)(viem@2.17.3)(wagmi@2.10.10):
+    resolution: {integrity: sha512-wLJsa/Z8hbe0mduSNarDPRqHgkV7UV1aepw2hdEN6Op35PwKIsVPKxzcR/NR/GbkUPFO++7lnXoGsLCc8TodXg==}
     peerDependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
-      '@dynamic-labs/sdk-react-core': 3.0.0-alpha.13
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13
+      '@dynamic-labs/logger': 3.0.0-alpha.19
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
+      '@dynamic-labs/sdk-react-core': 3.0.0-alpha.19
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19
       '@wagmi/core': ^2.6.4
       eventemitter3: 5.0.1
       react: ^18.0.0
       viem: ^2.7.6
       wagmi: ^2.5.7
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
-      '@dynamic-labs/sdk-react-core': 3.0.0-alpha.13(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
+      '@dynamic-labs/sdk-react-core': 3.0.0-alpha.19(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/wallet-connector-core': 3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1)
       '@wagmi/core': 2.11.7(@types/react@18.2.48)(react@18.2.0)(typescript@5.3.3)(viem@2.17.3)
       eventemitter3: 5.0.1
       react: 18.2.0
@@ -1887,15 +1887,15 @@ packages:
       wagmi: 2.10.10(@tanstack/react-query@5.51.1)(@types/react@18.2.48)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)(typescript@5.3.3)(viem@2.17.3)
     dev: false
 
-  /@dynamic-labs/wallet-book@3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nBbglIJUrZlDC277oo11yZBj2JgpaMjnCcro0gqqR9YosGJlpMWoDh74vjLkr8AAkyJBMUvD+P3sbm8qvdUBTQ==}
+  /@dynamic-labs/wallet-book@3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JviDeiMLjvk/umT5U8LiqF052h7aqbBF4zSUE9WNT7+ffcOt6J/l8zstVmgKRNvxjtrIlK/0lUQYy+ZEylnaZw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@dynamic-labs/iconic': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
+      '@dynamic-labs/iconic': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       util: 0.12.5
@@ -1904,22 +1904,22 @@ packages:
       - eventemitter3
     dev: false
 
-  /@dynamic-labs/wallet-connector-core@3.0.0-alpha.13(@dynamic-labs/logger@3.0.0-alpha.13)(@dynamic-labs/rpc-providers@3.0.0-alpha.13)(@dynamic-labs/types@3.0.0-alpha.13)(@dynamic-labs/utils@3.0.0-alpha.13)(@dynamic-labs/wallet-book@3.0.0-alpha.13)(eventemitter3@5.0.1):
-    resolution: {integrity: sha512-MMeZ8jm+LXlIrtyuOQM4vNWnfD/qGDQD8lNlj4G6CLkc/rXLB0VJz2QTNitzrR+PH9GmM4pe0ydqbC64yY4PtA==}
+  /@dynamic-labs/wallet-connector-core@3.0.0-alpha.19(@dynamic-labs/logger@3.0.0-alpha.19)(@dynamic-labs/rpc-providers@3.0.0-alpha.19)(@dynamic-labs/types@3.0.0-alpha.19)(@dynamic-labs/utils@3.0.0-alpha.19)(@dynamic-labs/wallet-book@3.0.0-alpha.19)(eventemitter3@5.0.1):
+    resolution: {integrity: sha512-yTh+ZP8/zQ3G3Z1797KAsoZRZNJTwcF7JuVRhwpIUmYymaMVh4emZTSMx61eukHA0mDN1jxhm/4OcLPTVAKcyA==}
     peerDependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13
+      '@dynamic-labs/logger': 3.0.0-alpha.19
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19
       eventemitter3: 5.0.1
     dependencies:
-      '@dynamic-labs/logger': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/rpc-providers': 3.0.0-alpha.13
+      '@dynamic-labs/logger': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/rpc-providers': 3.0.0-alpha.19
       '@dynamic-labs/sdk-api-core': 0.0.470
-      '@dynamic-labs/types': 3.0.0-alpha.13
-      '@dynamic-labs/utils': 3.0.0-alpha.13(eventemitter3@5.0.1)
-      '@dynamic-labs/wallet-book': 3.0.0-alpha.13(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
+      '@dynamic-labs/types': 3.0.0-alpha.19
+      '@dynamic-labs/utils': 3.0.0-alpha.19(eventemitter3@5.0.1)
+      '@dynamic-labs/wallet-book': 3.0.0-alpha.19(eventemitter3@5.0.1)(react-dom@18.2.0)(react@18.2.0)
       eventemitter3: 5.0.1
     dev: false
 
@@ -4967,7 +4967,7 @@ packages:
       '@babel/template': 7.24.7
       '@react-native/babel-plugin-codegen': 0.74.85(@babel/preset-env@7.24.8)
       babel-plugin-transform-flow-enums: 0.0.2(@babel/core@7.24.8)
-      react-refresh: 0.14.0
+      react-refresh: 0.14.2
     transitivePeerDependencies:
       - '@babel/preset-env'
       - supports-color
@@ -6396,7 +6396,7 @@ packages:
       '@walletconnect/safe-json': 1.0.2
       '@walletconnect/time': 1.0.2
       tslib: 1.14.1
-      uint8arrays: 3.1.1
+      uint8arrays: 3.1.0
     dev: false
 
   /@walletconnect/safe-json@1.0.2:
@@ -9769,7 +9769,6 @@ packages:
   /make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
-    requiresBuild: true
     dependencies:
       pify: 4.0.1
       semver: 5.7.2
@@ -10048,7 +10047,6 @@ packages:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
     engines: {node: '>=4'}
     hasBin: true
-    requiresBuild: true
     dev: false
 
   /mime@2.6.0:
@@ -11326,7 +11324,7 @@ packages:
       promise: 8.3.0
       react: 18.2.0
       react-devtools-core: 5.3.1
-      react-refresh: 0.14.0
+      react-refresh: 0.14.2
       react-shallow-renderer: 16.15.0(react@18.2.0)
       regenerator-runtime: 0.13.11
       scheduler: 0.24.0-canary-efb381bbf-20230505
@@ -11345,6 +11343,11 @@ packages:
 
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
+  /react-refresh@0.14.2:
+    resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
     dev: false
 
