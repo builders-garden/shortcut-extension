@@ -36,11 +36,96 @@ export default function EALComponent({ action }: { action: string }) {
   }, [metadata])
 
   if (!isLoggedIn) {
-    return <DynamicWidget />
+    return (
+      <div className="w-screen flex items-center justify-center p-8">
+        <DynamicWidget />
+      </div>
+    )
   }
 
   if (!metadata) {
-    return <DynamicWidget />
+    return (
+      <div className="w-screen flex items-center justify-center p-8">
+        <DynamicWidget />
+      </div>
+    )
+  }
+
+  const renderLink = (link: any, index: number) => {
+    if (lastExecutedAction && lastExecutedAction.index === index) {
+      if (lastExecutedAction.success) {
+        return (
+          <button
+            onClick={() => handleClick(link, index)}
+            className="bg-green-500 rounded-xl px-4 py-2 border border-green-800 hover:bg-green-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+            {link.label}
+          </button>
+        )
+      } else {
+        return (
+          <button
+            onClick={() => handleClick(link, index)}
+            className="bg-red-500 rounded-xl px-4 py-2 border border-red-800 hover:bg-red-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+            {link.label}
+          </button>
+        )
+      }
+    }
+
+    return (
+      <button
+        onClick={() => handleClick(link, index)}
+        className="bg-blue-500 rounded-xl px-4 py-2 border border-blue-800 hover:bg-blue-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+        {link.label}
+      </button>
+    )
+  }
+
+  const renderLinks = (metadata: any) => {
+    if (metadata.links.length === 1) {
+      return (
+        <div className="grid grid-cols-1 gap-2 w-full max-w-[400px] mx-auto">
+          {metadata.links.map(renderLink)}
+        </div>
+      )
+    }
+
+    if (metadata.links.length > 1) {
+      return (
+        <div className="grid grid-cols-2 gap-2 w-full max-w-[400px] mx-auto">
+          {metadata.links.map((link: any, index: number) => {
+            if (lastExecutedAction && lastExecutedAction.index === index) {
+              if (lastExecutedAction.success) {
+                return (
+                  <button
+                    onClick={() => handleClick(link, index)}
+                    className="bg-green-500 rounded-xl px-4 py-2 border border-green-800 hover:bg-green-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+                    {link.label}
+                  </button>
+                )
+              } else {
+                return (
+                  <button
+                    onClick={() => handleClick(link, index)}
+                    className="bg-red-500 rounded-xl px-4 py-2 border border-red-800 hover:bg-red-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+                    {link.label}
+                  </button>
+                )
+              }
+            }
+
+            return (
+              <button
+                onClick={() => handleClick(link, index)}
+                className="bg-blue-500 rounded-xl px-4 py-2 border border-blue-800 hover:bg-blue-600 cursor-pointer font-semibold text-white flex items-center justify-center">
+                {link.label}
+              </button>
+            )
+          })}
+        </div>
+      )
+    }
+    return <div />
   }
 
   const handleClick = async (link: any, index: number) => {
@@ -49,7 +134,7 @@ export default function EALComponent({ action }: { action: string }) {
     setLastExecutedAction(null)
     try {
       if (link.type === "link") {
-        window.open(link.targetUrl, "_blank")
+        window.open(link.targetUrl, "_blank", "noopener,noreferrer")
       }
       if (link.type === "tx") {
         const txDataRes = await fetch(link.targetUrl, {
@@ -96,7 +181,7 @@ export default function EALComponent({ action }: { action: string }) {
         console.log("[Shortcut] Signing.")
         const signature = await primaryWallet.signMessage(message)
         console.log(signature, "[Shortcut] Signed.")
-        const response = await fetch(link.postUrl, {
+        await fetch(link.postUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -105,6 +190,42 @@ export default function EALComponent({ action }: { action: string }) {
             message
           })
         })
+      }
+      if (link.type === "one-click-login") {
+        const oneClickDataRes = await fetch(link.targetUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ address: primaryWallet.address })
+        })
+
+        const { message } = await oneClickDataRes.json()
+
+        const walletClient = (await primaryWallet.getWalletClient(
+          (await primaryWallet.getNetwork()).toString()
+        )) as WalletClient
+
+        console.log("[Shortcut] Signing.")
+        const signature = await walletClient.signMessage({
+          message,
+          account: primaryWallet.address as `0x${string}`
+        })
+
+        const postUrlRes = await fetch(`${link.postUrl}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            signedMessage: signature,
+            address: primaryWallet.address,
+            chain: "EVM",
+            messageToSign: message
+          })
+        })
+
+        const { url } = await postUrlRes.json()
+
+        if (url) {
+          window.open(url, "_blank", "noopener,noreferrer")
+        }
       }
       setLastExecutedAction({ ...link, index, success: true })
     } catch (error) {
@@ -121,7 +242,7 @@ export default function EALComponent({ action }: { action: string }) {
         <DynamicWidget />
       </div>
 
-      <div className="flex flex-col items-center p-4 border rounded-xl space-y-2">
+      <div className="flex flex-col items-center p-4 border rounded-xl space-y-2 w-auto max-w-[400px] mx-auto">
         <img src={metadata.image} width={400} height={400} />
         <a
           href={metadata.url}
@@ -129,41 +250,11 @@ export default function EALComponent({ action }: { action: string }) {
           className="text-xs text-gray-500 opacity-40 hover:opacity-100">
           {metadata.url.split("https://")[1]}
         </a>
-        <div>
+        <div className="text-center">
           <p className="font-bold text-lg">{metadata.title}</p>
           <p>{metadata.description}</p>
         </div>
-        <div className="grid grid-cols-2 gap-2">
-          {metadata.links.map((link: any, index: number) => {
-            if (lastExecutedAction && lastExecutedAction.index === index) {
-              if (lastExecutedAction.success) {
-                return (
-                  <button
-                    onClick={() => handleClick(link, index)}
-                    className="bg-green-500 rounded-xl px-4 py-2 border border-green-800 hover:bg-green-600 cursor-pointer font-semibold text-white flex items-center justify-center">
-                    {link.label}
-                  </button>
-                )
-              } else {
-                return (
-                  <button
-                    onClick={() => handleClick(link, index)}
-                    className="bg-red-500 rounded-xl px-4 py-2 border border-red-800 hover:bg-red-600 cursor-pointer font-semibold text-white flex items-center justify-center">
-                    {link.label}
-                  </button>
-                )
-              }
-            }
-
-            return (
-              <button
-                onClick={() => handleClick(link, index)}
-                className="bg-blue-500 rounded-xl px-4 py-2 border border-blue-800 hover:bg-blue-600 cursor-pointer font-semibold text-white flex items-center justify-center">
-                {link.label}
-              </button>
-            )
-          })}
-        </div>
+        {renderLinks(metadata)}
         {selectedAction && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-white p-4 rounded-xl">

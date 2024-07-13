@@ -58,6 +58,7 @@ const handleElement = async (tag: string, element: Element) => {
         `chrome-extension://dkfjmmpblkmjonmaemcmngophheaolkh/tabs/eal.html?action=${encodeURIComponent(eal)}`,
         "_blank",
         "noopener,noreferrer,popup=true,width=500,height=600"
+        //",popup=true,width=500,height=600"
       )
     }
 
