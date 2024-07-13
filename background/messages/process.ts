@@ -6,7 +6,7 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
   if (!url) return
 
   console.log("[Shortcut] Processing")
-  const data = await fetch(url)
+  //   const data = await fetch(url)
 
   res.send({
     data: {
